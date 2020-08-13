@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, wait } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { fetchShow as mockFetchShow } from "../api/fetchShow ";
+import { fetchShow as mockFetchShow } from "../api/fetchShow";
 
 import Episodes from "../components/Episodes";
 import App from "../App";
@@ -19,11 +19,12 @@ test("renders the app ", () => {
 
 test("correct episodes populate when you select a season", async () => {
   mockFetchShow.mockResolvedValueOnce(data);
-
+  // use mocks in unit tests
   const { getByTestId, getByText } = render(<App />);
   await wait(() => {
     getByText(/Select a season/i);
   });
+  // test asynchronous API calls
   const dropDown = getByText(/Select a season/i);
   userEvent.click(dropDown);
   // fireEvent.change(dropDown, {value: "Season 1"})
@@ -31,4 +32,5 @@ test("correct episodes populate when you select a season", async () => {
   expect(text).toBeInTheDocument();
   userEvent.click(text);
   getByText(/Season 1, Episode 1/i);
+  // test React components as the props change
 });

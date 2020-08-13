@@ -1,4 +1,5 @@
 cloned and branched 08/03/2020 pnl
+accidental deleted 08/13/20 pnl
 
 # React Testing TV Show
 
@@ -6,9 +7,9 @@ cloned and branched 08/03/2020 pnl
 
 ### Objectives
 
-- use mocks in unit tests
-- test asynchronous API calls that are made in a component
-- test React components as the props change
+x- use mocks in unit tests
+x- test asynchronous API calls that are made in a component
+x- test React components as the props change
 
 ### Introduction
 
